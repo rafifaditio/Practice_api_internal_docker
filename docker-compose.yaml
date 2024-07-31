@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app_1:
+    build:
+      context: ./app_1
+    ports:
+      - "8888:8888"  # Expose port 8888 to the host machine
+
+  app_2:
+    build:
+      context: ./app_2
+    expose:
+      - "8800"  # Expose port 8800 only to other containers on the same network
